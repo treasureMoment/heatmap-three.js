@@ -16,20 +16,10 @@
     "url": "https://github.com/treasureMoment/heatmap-three.js.git"
   }, 
   "scripts": {
-    "build": "npm run build-styles && npm run build-dev && gulp minify",
-    "build-dev": "rollup -c && gulp transform-proto",
-    "build-test": "rollup -c --environment BUILD:test && gulp transform-proto",
-    "build-styles": "gulp styles",
-    "dev": "rollup -c -w",
-    "doc": "gulp doc",
-    "lint": "eslint src/**/*.js test/**/*.js",
-    "postversion": "gulp zip",
-    "pretest": "npm run lint && npm run build-test",
-    "prepublish": "npm run build",
-    "preversion": "npm run lint",
-    "report-coverage": "codecov",
-    "test": "gulp test --cov",
-    "version": "npm run build && npm run doc && git add -A docs/api"
+    "build": "npm run rollup",
+    "dev": "npm run rollupdev",
+    "rollup": "rollup -c build/rollup-config.js",
+    "rollupdev": "rollup -c build/rollup-config-dev.js",
   },
   "dependencies": {
   },
