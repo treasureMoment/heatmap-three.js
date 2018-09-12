@@ -1,0 +1,51 @@
+{
+  "name": "heatmap-three",
+  "version": "0.1.1",
+  "description": "A light JavaScript library to create integrated 2D/3D maps.",
+  "license": "BSD-3-Clause",
+  "author": "aFei",
+  "keywords": [
+    "javascript",
+    "three",
+    "map",    
+    "3d-maps",
+    "heatmap"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/treasureMoment/heatmap-three.js.git"
+  }, 
+  "scripts": {
+    "build": "npm run build-styles && npm run build-dev && gulp minify",
+    "build-dev": "rollup -c && gulp transform-proto",
+    "build-test": "rollup -c --environment BUILD:test && gulp transform-proto",
+    "build-styles": "gulp styles",
+    "dev": "rollup -c -w",
+    "doc": "gulp doc",
+    "lint": "eslint src/**/*.js test/**/*.js",
+    "postversion": "gulp zip",
+    "pretest": "npm run lint && npm run build-test",
+    "prepublish": "npm run build",
+    "preversion": "npm run lint",
+    "report-coverage": "codecov",
+    "test": "gulp test --cov",
+    "version": "npm run build && npm run doc && git add -A docs/api"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.4",
+    "gulp-rename": "^1.4.0",
+    "rollup": "^0.57.1",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^9.1.3",
+    "rollup-plugin-json": "^2.3.0",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-uglify": "^4.0.0",
+    "three": "^0.94.0",
+    "uglify-js": "^3.3.18"
+  }
+}
