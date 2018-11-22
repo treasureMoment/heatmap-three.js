@@ -79,7 +79,7 @@
 
 			var i = 0,max=10,data=[];
 			while(i<2000){
-				data.push({x:getRandom(1,256),y:getRandom(1,256),value:getRandom(1,8)});
+				data.push({x:getRandom(1,256),y:getRandom(1,256),value:getRandom(1,6)});
 				i++;
 			}
 
@@ -93,7 +93,7 @@
 			material = new THREE.ShaderMaterial({
 				uniforms: {
 				 	heightMap: {value: texture},
-				    heightRatio: {value:10}
+				    heightRatio: {value:5}
 				},
 				vertexShader: document.getElementById('vertexShader').textContent,
 				fragmentShader: document.getElementById('fragmentShader').textContent,
